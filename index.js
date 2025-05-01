@@ -61,8 +61,7 @@ const searchInputHandler = (e) => {
 
     lastSearchQuery = searchQuery
 
-    getData(`http://www.omdbapi.com/?apikey=18b8609f&s=${searchQuery}`)
-      .then((data) => data.forEach(addMoviesToList))
+    getData(`https://www.omdbapi.com/?apikey=de7bdae0&s=${encodeURIComponent(searchQuery)}`)      .then((data) => data.forEach(addMoviesToList))
       .catch((err) => console.log(err))
   }, 2000)
 }
