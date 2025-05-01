@@ -26,6 +26,7 @@ const addMoviesToList = ({ Poster: poster, Title: title, Year: year }) => {
 
   img.classList.add('movie__image')
   img.src = /^(https?:\/\/)/i.test(poster) ? poster : 'img/no-image.png'
+  img.onerror = function() { this.src = 'img/no-image.png' } 
   img.alt = `${title} (${year})`
   img.title = `${title} (${year})`
 
